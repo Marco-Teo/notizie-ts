@@ -34,27 +34,23 @@ const Home = function () {
           <div className="justify-content-center ">
             <Carousel>
               {news &&
-                news.map((article) => {
-                  return (
-                    <>
-                      <Carousel.Item key={article.id}>
-                        <img src={article.image_url} alt={article.title} />
-                      </Carousel.Item>
-                      <Carousel.Caption>
-                        <h3>{article.title}</h3>
-                        <span>
-                          Created by:
-                          {article.authors.map((author) => author.name)}
-                        </span>
-                        <p>{article.summary}</p>
-                        <span>
-                          Published:{article.published_at} / Last update:
-                          {article.updated_at}
-                        </span>
-                      </Carousel.Caption>
-                    </>
-                  );
-                })}
+                news.map((article) => (
+                  <Carousel.Item key={article.id}>
+                    <img src={article.image_url} alt={article.title} />
+                    <Carousel.Caption>
+                      <h3>{article.title}</h3>
+                      <span>
+                        Created by:
+                        {article.authors.map((author) => author.name)}
+                      </span>
+                      <p>{article.summary}</p>
+                      <span>
+                        Published: {article.published_at} / Last update:
+                        {article.updated_at}
+                      </span>
+                    </Carousel.Caption>
+                  </Carousel.Item>
+                ))}
             </Carousel>
           </div>
         </Col>
